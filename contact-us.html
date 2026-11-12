@@ -1,0 +1,1067 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us - TIF4ND Impact Hub</title>
+
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* HERO BACKGROUND */
+    .contact-hero {
+      background:
+        linear-gradient(90deg, rgba(8, 25, 43, .88), rgba(8, 25, 43, .48)),
+        url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2000&q=85');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .section-label {
+      color: #0d9488;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* CONTACT CARDS */
+    .contact-card {
+      transition: all .3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 35px rgba(15, 23, 42, .09);
+    }
+
+    /* FORM */
+    .form-input {
+      width: 100%;
+      padding: 13px 16px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      color: #1e293b;
+      outline: none;
+      transition: all .25s ease;
+    }
+
+    .form-input:focus {
+      border-color: #0d9488;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, .12);
+    }
+
+    .form-input::placeholder {
+      color: #94a3b8;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 9px;
+    }
+
+    /* CTA BACKGROUND */
+    .contact-cta {
+      background:
+        linear-gradient(rgba(15, 23, 42, .88), rgba(15, 23, 42, .88)),
+        url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1800&q=85');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .faq-item {
+      transition: all .25s ease;
+    }
+
+    .faq-item:hover {
+      border-color: #99f6e4;
+    }
+
+    @media(max-width: 640px) {
+      .contact-hero {
+        background-position: center;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+
+  <!-- HEADER -->
+   <div class="top-bar">
+  <div class="top-bar-content">
+    <a href="tel:+918122333014">📞 +91 81223 33014</a>
+    <a href="mailto:contact@tif4nd.org">✉️ contact@tif4nd.org</a>
+  </div>
+</div>
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex items-center justify-between h-20">
+
+        <a href="index.html" class="flex items-center gap-3">
+          
+          <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-white font-bold text-xl shadow-md">
+         <img src="/image/school-logo-120x180.png"> </img>
+          </div>
+
+          <div class="flex flex-col">
+
+            <span class="text-lg sm:text-xl font-bold tracking-tight text-teal-600">
+              The Indian Foundation For Neurodiversity
+            </span>
+
+            <span class="text-xs font-semibold text-slate-600 tracking-wider uppercase">
+              TIF4ND
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <nav class="hidden md:flex items-center gap-7">
+
+          <a href="index.html" class="nav-link">Home</a>
+
+          <a href="who-we-are.html" class="nav-link">Who We Are</a>
+
+          <a href="what-we-do.html" class="nav-link">What We Do</a>
+
+          <a href="our-partners.html" class="nav-link">Our Partners</a>
+
+          <a href="contact-us.html" class="nav-link active">Contact Us</a>
+
+          <a href="donate.html" class="btn-primary">Donate Now</a>
+
+        </nav>
+
+
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu">
+
+          <i data-lucide="menu" class="w-6 h-6"></i>
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu"
+      class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-3">
+
+      <a href="index.html" class="mobile-nav-link">Home</a>
+
+      <a href="who-we-are.html" class="mobile-nav-link">Who We Are</a>
+
+      <a href="what-we-do.html" class="mobile-nav-link">What We Do</a>
+
+      <a href="our-partners.html" class="mobile-nav-link">Our Partners</a>
+
+      <a href="contact-us.html" class="mobile-nav-link active">Contact Us</a>
+
+      <a href="donate.html"
+        class="block text-center btn-primary w-full mt-4">
+        Donate Now
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <main class="flex-grow">
+
+
+    <!-- HERO SECTION -->
+    <section class="contact-hero min-h-[430px] flex items-center text-white">
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-24">
+
+        <div class="max-w-3xl">
+
+          <span class="inline-flex items-center gap-2 bg-teal-500/20 border border-teal-300/30 text-teal-200 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+
+            <i data-lucide="message-circle-heart" class="w-4 h-4"></i>
+
+            WE WOULD LOVE TO HEAR FROM YOU
+
+          </span>
+
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+
+            Contact Us
+
+          </h1>
+
+
+          <p class="text-lg sm:text-xl text-slate-200 leading-relaxed max-w-2xl">
+
+            Have questions, ideas, or want to make a difference?
+            Let's start a conversation and explore how we can work together.
+
+          </p>
+
+
+          <div class="flex flex-wrap gap-4 mt-8">
+
+            <a href="#contact-form-section"
+              class="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-600 px-7 py-3.5 rounded-full font-bold transition">
+
+              Send Us a Message
+
+              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+
+            </a>
+
+
+            <a href="#contact-information"
+              class="inline-flex items-center gap-2 border border-white/60 hover:bg-white hover:text-slate-900 px-7 py-3.5 rounded-full font-bold transition">
+
+              Get in Touch
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="py-16 bg-white">
+
+      <div class="max-w-5xl mx-auto px-4 text-center">
+
+        <span class="section-label">LET'S CONNECT</span>
+
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-4 mb-5">
+
+          Every Great Connection Starts With a Conversation.
+
+        </h2>
+
+        <p class="text-slate-600 text-lg leading-relaxed max-w-3xl mx-auto">
+
+          Whether you are looking to collaborate, volunteer,
+          support our initiatives, or simply learn more about
+          our work, we are happy to hear from you.
+
+        </p>
+
+        <div class="w-20 h-1 bg-teal-500 rounded-full mx-auto mt-8"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT INFORMATION -->
+    <section id="contact-information" class="py-10 bg-slate-50">
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-12">
+
+          <span class="section-label">GET IN TOUCH</span>
+
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
+
+            We'd Love to Connect With You
+
+          </h2>
+
+          <p class="text-slate-500 max-w-2xl mx-auto">
+
+            Choose the best way to connect with TIF4ND.
+
+          </p>
+
+        </div>
+
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+
+
+          <!-- EMAIL -->
+          <div class="contact-card bg-white border border-slate-200 rounded-2xl p-8 text-center">
+
+            <div class="w-16 h-16 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center mx-auto mb-5">
+
+              <i data-lucide="mail" class="w-8 h-8"></i>
+
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Email Us
+            </h3>
+
+            <p class="text-slate-500 text-sm leading-relaxed mb-5">
+
+              Have a question or enquiry?
+              Reach out to us through our official email.
+
+            </p>
+
+            <span class="text-sm font-semibold text-teal-700">
+              contact@tif4nd.org
+            </span>
+
+          </div>
+
+
+          <!-- PHONE -->
+          <div class="contact-card bg-white border border-slate-200 rounded-2xl p-8 text-center">
+
+            <div class="w-16 h-16 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto mb-5">
+
+              <i data-lucide="phone" class="w-8 h-8"></i>
+
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Call Us
+            </h3>
+
+            <p class="text-slate-500 text-sm leading-relaxed mb-5">
+
+              Want to discuss an idea or explore an opportunity?
+              We welcome your enquiries.
+
+            </p>
+
+            <span class="text-sm font-semibold text-blue-700">
+             Contact no: +91-8122333014
+            </span>
+
+          </div>
+
+
+          <!-- LOCATION -->
+          <div class="contact-card bg-white border border-slate-200 rounded-2xl p-8 text-center">
+
+            <div class="w-16 h-16 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mx-auto mb-5">
+
+              <i data-lucide="map-pin" class="w-8 h-8"></i>
+
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Our Location
+            </h3>
+
+            <p class="text-slate-500 text-sm leading-relaxed mb-5">
+
+              Connect with us to learn more about
+              our organization and community initiatives.
+
+            </p>
+
+            <span class="text-sm font-semibold text-orange-700">
+              <address>
+                Registered Office :
+                <br>
+                DOOR NO: 85/19, PALAKKAD ROAD, POLLACHI-642001, TAMIL NADU
+                <br>
+                <br>
+                Operating Address: 
+                <br>
+                92,5TH CROSS STREET, NEW THILLAI NAGAR, VADAVALLI, COIMBATORE – 641041
+              </address>
+            </span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT FORM -->
+    <section id="contact-form-section" class="py-20 bg-white">
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="grid lg:grid-cols-5 gap-12 items-start">
+
+
+          <!-- LEFT CONTENT -->
+          <div class="lg:col-span-2">
+
+            <span class="section-label">SEND AN ENQUIRY</span>
+
+            <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-4 mb-6">
+
+              Let's Start a Conversation.
+
+            </h2>
+
+            <p class="text-slate-600 leading-relaxed mb-8">
+
+              We value your thoughts, questions, and ideas.
+              Fill out the form and share what brings you here.
+
+            </p>
+
+
+            <div class="rounded-3xl overflow-hidden shadow-lg mb-8">
+
+              <img
+                src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1000&q=85"
+                alt="People having a friendly conversation"
+                class="w-full h-64 object-cover">
+
+            </div>
+
+
+            <div class="bg-teal-50 border border-teal-100 rounded-2xl p-6">
+
+              <div class="flex gap-3">
+
+                <div class="shrink-0 text-teal-600">
+
+                  <i data-lucide="heart-handshake" class="w-7 h-7"></i>
+
+                </div>
+
+                <div>
+
+                  <h3 class="font-bold text-slate-900 mb-2">
+                    Your Voice Matters
+                  </h3>
+
+                  <p class="text-sm text-slate-600 leading-relaxed">
+
+                    Every question, suggestion, and connection
+                    can open the door to meaningful opportunities.
+
+                  </p>
+
+                </div>
+              </div>
+            </div>
+            <!-- Google Map Location Section -->
+        <div class="map-section" style="margin: 30px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.174213455451!2d76.9128748735345!3d11.025552454552196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85f9e9f381fc7%3A0x6c32a2ab2498513f!2sThe%20Indian%20Foundation%20For%20Neurodiversity(TIF4ND)!5e0!3m2!1sen!2sin!4v1794337146038!5m2!1sen!2sin" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+        </div>
+          </div>
+
+        <!-- RIGHT FORM -->
+          <div class="lg:col-span-3">
+
+            <div class="bg-white p-7 sm:p-10 rounded-3xl border border-slate-200 shadow-xl">
+
+              <div class="mb-8">
+
+                <span class="section-label">CONTACT FORM</span>
+
+                <h3 class="text-2xl font-bold text-slate-900 mt-3">
+
+                  Send Us a Message
+
+                </h3>
+
+                <p class="text-slate-500 text-sm mt-2">
+
+                  Please complete the details below.
+
+                </p>
+
+              </div>
+
+
+              <form id="contact-form" class="space-y-6">
+
+                <!-- NAME -->
+                <div>
+
+                  <label for="name" class="form-label">
+                    Full Name *
+                  </label>
+
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    maxlength="100"
+                    autocomplete="name"
+                    placeholder="Enter your full name"
+                    class="form-input">
+
+                </div>
+
+
+                <!-- EMAIL + PHONE -->
+                <div class="grid sm:grid-cols-2 gap-6">
+
+                  <div>
+
+                    <label for="email" class="form-label">
+                      Email Address *
+                    </label>
+
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      maxlength="254"
+                      autocomplete="email"
+                      placeholder="you@example.com"
+                      class="form-input">
+
+                  </div>
+
+
+                  <div>
+
+                    <label for="phone" class="form-label">
+                      Phone Number
+                    </label>
+
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      maxlength="20"
+                      autocomplete="tel"
+                      placeholder="Enter phone number"
+                      class="form-input">
+
+                  </div>
+
+                </div>
+
+
+                <!-- ENQUIRY TYPE -->
+                <div>
+
+                  <label for="enquiry" class="form-label">
+                    Enquiry Type *
+                  </label>
+
+                  <select
+                    id="enquiry"
+                    name="enquiry"
+                    required
+                    class="form-input">
+
+                    <option value="">Select an enquiry type</option>
+
+                    <option value="General Enquiry">General Enquiry</option>
+
+                    <option value="Partnership">Partnership</option>
+
+                    <option value="Volunteering">Volunteering</option>
+
+                    <option value="Donation">Donation</option>
+
+                    <option value="Community Support">Community Support</option>
+
+                    <option value="Other">Other</option>
+
+                  </select>
+
+                </div>
+
+
+                <!-- SUBJECT -->
+                <div>
+
+                  <label for="subject" class="form-label">
+                    Subject *
+                  </label>
+
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    required
+                    maxlength="150"
+                    placeholder="What is your message about?"
+                    class="form-input">
+
+                </div>
+
+
+                <!-- MESSAGE -->
+                <div>
+
+                  <label for="message" class="form-label">
+                    Your Message *
+                  </label>
+
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    required
+                    maxlength="3000"
+                    placeholder="Write your message here..."
+                    class="form-input resize-y"></textarea>
+
+                </div>
+
+
+                <!-- PRIVACY -->
+                <div class="flex items-start gap-3">
+
+                  <input
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    required
+                    class="mt-1 w-4 h-4 accent-teal-600">
+
+                  <label for="consent" class="text-sm text-slate-500 leading-relaxed">
+
+                    I agree to be contacted regarding my enquiry
+                    using the details provided above.
+
+                  </label>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+                <button
+                  type="submit"
+                  class="w-full flex items-center justify-center gap-3 bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 rounded-xl transition shadow-lg shadow-teal-600/20">
+
+                  <i data-lucide="send" class="w-5 h-5"></i>
+
+                  Send Message
+
+                </button>
+
+
+                <p class="text-xs text-slate-400 text-center leading-relaxed">
+
+                  Your form needs to be connected to an email service
+                  or backend before messages can be delivered.
+
+                </p>
+
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WHY CONNECT WITH US -->
+    <section class="py-10 bg-slate-50">
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-14">
+
+          <span class="section-label">HOW CAN WE CONNECT?</span>
+
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
+
+            There Are Many Ways to Get Involved.
+
+          </h2>
+
+          <p class="text-slate-500 max-w-2xl mx-auto">
+
+            Whether you have time, ideas, resources, or simply
+            want to learn more, there is a way to connect.
+
+          </p>
+
+        </div>
+
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+
+
+          <div class="bg-white p-8 rounded-2xl border border-slate-200">
+
+            <div class="w-14 h-14 rounded-2xl bg-teal-50 text-teal-600 flex items-center justify-center mb-5">
+
+              <i data-lucide="handshake" class="w-7 h-7"></i>
+
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Partnership
+            </h3>
+
+            <p class="text-slate-500 text-sm leading-relaxed">
+              Explore opportunities to collaborate and work
+              towards shared community goals.
+            </p>
+
+          </div>
+
+
+          <div class="bg-white p-8 rounded-2xl border border-slate-200">
+
+            <div class="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5">
+
+              <i data-lucide="heart-handshake" class="w-7 h-7"></i>
+
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Volunteering
+            </h3>
+
+            <p class="text-slate-500 text-sm leading-relaxed">
+              Share your time, skills, and knowledge to support
+              meaningful initiatives.
+            </p>
+
+          </div>
+
+
+          <div class="bg-white p-8 rounded-2xl border border-slate-200">
+
+            <div class="w-14 h-14 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mb-5">
+
+              <i data-lucide="lightbulb" class="w-7 h-7"></i>
+
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Ideas & Suggestions
+            </h3>
+
+            <p class="text-slate-500 text-sm leading-relaxed">
+              Share your thoughts and suggestions
+              for future community initiatives.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ SECTION -->
+    <section class="py-10 bg-white">
+
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-12">
+
+          <span class="section-label">QUICK ANSWERS</span>
+
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
+
+            Frequently Asked Questions
+
+          </h2>
+
+          <p class="text-slate-500">
+
+            A few helpful answers before you get in touch.
+
+          </p>
+
+        </div>
+
+
+        <div class="space-y-4">
+
+
+          <details class="faq-item group border border-slate-200 rounded-2xl p-6">
+
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-bold text-slate-900">
+
+              How can I contact TIF4ND?
+
+              <i data-lucide="plus" class="w-5 h-5 text-teal-600 shrink-0 group-open:rotate-45 transition"></i>
+
+            </summary>
+
+            <p class="text-slate-600 text-sm leading-relaxed mt-4">
+
+              You can use the contact form on this page to
+              share your questions, suggestions, or enquiries.
+
+            </p>
+
+          </details>
+
+
+          <details class="faq-item group border border-slate-200 rounded-2xl p-6">
+
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-bold text-slate-900">
+
+              How can my organization become a partner?
+
+              <i data-lucide="plus" class="w-5 h-5 text-teal-600 shrink-0 group-open:rotate-45 transition"></i>
+
+            </summary>
+
+            <p class="text-slate-600 text-sm leading-relaxed mt-4">
+
+              Organizations interested in collaboration can
+              submit an enquiry through the contact form by
+              selecting Partnership.
+
+            </p>
+
+          </details>
+
+
+          <details class="faq-item group border border-slate-200 rounded-2xl p-6">
+
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-bold text-slate-900">
+
+              Can I volunteer with TIF4ND?
+
+              <i data-lucide="plus" class="w-5 h-5 text-teal-600 shrink-0 group-open:rotate-45 transition"></i>
+
+            </summary>
+
+            <p class="text-slate-600 text-sm leading-relaxed mt-4">
+
+              You can express your interest by selecting
+              Volunteering in the enquiry form and sharing
+              your skills and interests.
+
+            </p>
+
+          </details>
+
+
+          <details class="faq-item group border border-slate-200 rounded-2xl p-6">
+
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-bold text-slate-900">
+
+              Can I share suggestions or ideas?
+
+              <i data-lucide="plus" class="w-5 h-5 text-teal-600 shrink-0 group-open:rotate-45 transition"></i>
+
+            </summary>
+
+            <p class="text-slate-600 text-sm leading-relaxed mt-4">
+
+              Absolutely. Select General Enquiry or Other
+              and share your suggestions through the form.
+
+            </p>
+
+          </details>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FINAL CTA -->
+    <section class="contact-cta py-20 text-white">
+
+      <div class="max-w-4xl mx-auto px-4 text-center">
+
+        <span class="text-teal-300 font-bold tracking-widest text-sm uppercase">
+
+          YOUR CONNECTION MATTERS
+
+        </span>
+
+
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-5 mb-6">
+
+          Let's Create Something Meaningful Together.
+
+        </h2>
+
+
+        <p class="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto mb-9">
+
+          Every conversation is an opportunity to learn,
+          connect, and create a positive difference.
+
+        </p>
+
+
+        <a href="#contact-form-section"
+          class="inline-flex items-center gap-3 bg-teal-500 hover:bg-teal-600 text-white px-9 py-4 rounded-full font-bold transition">
+
+          Start a Conversation
+
+          <i data-lucide="arrow-right" class="w-5 h-5"></i>
+
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+
+        <div class="text-center md:text-left">
+
+          <h3 class="text-white font-bold text-lg mb-2">
+
+            The Indian Foundation For Neurodiversity
+
+          </h3>
+
+          <p class="text-sm">
+            TIF4ND - Community Impact
+          </p>
+
+        </div>
+
+
+        <div class="flex flex-wrap justify-center gap-5 text-sm">
+
+          <a href="index.html" class="hover:text-teal-400 transition">Home</a>
+
+          <a href="who-we-are.html" class="hover:text-teal-400 transition">Who We Are</a>
+
+          <a href="what-we-do.html" class="hover:text-teal-400 transition">What We Do</a>
+
+          <a href="our-partners.html" class="hover:text-teal-400 transition">Our Partners</a>
+
+          <a href="contact-us.html" class="hover:text-teal-400 transition">Contact Us</a>
+
+        </div>
+
+      </div>
+
+
+      <div class="border-t border-slate-800 mt-8 pt-6 text-center text-sm">
+
+        <p>
+          &copy; 2026 TIF4ND Community Impact. All rights preserved.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="js/script.js"></script>
+
+  <script>
+
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+
+    // Mobile navigation
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', function () {
+
+      const isHidden = mobileMenu.classList.toggle('hidden');
+
+      menuBtn.setAttribute('aria-expanded', String(!isHidden));
+
+      menuBtn.innerHTML = isHidden
+        ? '<i data-lucide="menu" class="w-6 h-6"></i>'
+        : '<i data-lucide="x" class="w-6 h-6"></i>';
+
+      lucide.createIcons();
+
+    });
+
+
+    // Close mobile menu after navigation
+    mobileMenu.querySelectorAll('a').forEach(link => {
+
+      link.addEventListener('click', function () {
+
+        mobileMenu.classList.add('hidden');
+
+        menuBtn.setAttribute('aria-expanded', 'false');
+
+        menuBtn.innerHTML =
+          '<i data-lucide="menu" class="w-6 h-6"></i>';
+
+        lucide.createIcons();
+
+      });
+
+    });
+
+
+    // Contact form validation
+    // Connect a backend or form service to deliver messages.
+    const contactForm = document.getElementById('contact-form');
+
+    contactForm.addEventListener('submit', function (event) {
+
+      event.preventDefault();
+
+      if (!contactForm.reportValidity()) {
+        return;
+      }
+
+      alert(
+        'Your details are valid! The contact form still needs an email service or backend connection before your message can be sent.'
+      );
+
+    });
+
+  </script>
+
+</body>
+</html>

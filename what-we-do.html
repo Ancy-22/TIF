@@ -1,0 +1,663 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>What We Do - TIF4ND Impact Hub</title>
+
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Hero background */
+    .what-hero {
+      background:
+        linear-gradient(90deg, rgba(10, 25, 45, .88), rgba(10, 25, 45, .45)),
+        url('https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=2000&q=85');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Initiative cards */
+    .initiative-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      background: white;
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+
+    .initiative-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, .13);
+    }
+
+    .initiative-image {
+      height: 230px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      transition: transform .5s ease;
+    }
+
+    .initiative-card:hover .initiative-image {
+      transform: scale(1.04);
+    }
+
+    .initiative-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(15, 23, 42, .55),
+        transparent 75%
+      );
+    }
+
+    .initiative-number {
+      position: absolute;
+      z-index: 2;
+      top: 18px;
+      left: 18px;
+      background: rgba(255,255,255,.95);
+      color: #0f766e;
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .section-label {
+      color: #0d9488;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .approach-card {
+      transition: all .3s ease;
+    }
+
+    .approach-card:hover {
+      transform: translateY(-5px);
+      background: #f0fdfa;
+    }
+
+    .cta-section {
+      background:
+        linear-gradient(rgba(15, 23, 42, .88), rgba(15, 23, 42, .88)),
+        url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1800&q=85');
+      background-size: cover;
+      background-position: center;
+    }
+
+    @media (max-width: 640px) {
+      .what-hero {
+        background-position: center;
+      }
+
+      .initiative-image {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+<div class="top-bar">
+  <div class="top-bar-content">
+    <a href="tel:+918122333014">📞 +91 81223 33014</a>
+    <a href="mailto:contact@tif4nd.org">✉️ contact@tif4nd.org</a>
+  </div>
+</div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex items-center justify-between h-20">
+
+        <a href="index.html" class="flex items-center gap-3">
+
+            <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-white font-bold text-xl shadow-md">
+         <img src="/image/school-logo-120x180.png"> </img>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="text-lg sm:text-xl font-bold tracking-tight text-teal-600">
+              The Indian Foundation For Neurodiversity
+            </span>
+
+            <span class="text-xs font-semibold text-slate-600 tracking-wider uppercase">
+              TIF4ND
+            </span>
+          </div>
+
+        </a>
+
+        <nav class="hidden md:flex items-center gap-7">
+
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="who-we-are.html" class="nav-link">Who We Are</a>
+          <a href="what-we-do.html" class="nav-link active">What We Do</a>
+          <a href="our-partners.html" class="nav-link">Our Partners</a>
+          <a href="contact-us.html" class="nav-link">Contact Us</a>
+          <a href="donate.html" class="btn-primary">Donate Now</a>
+
+        </nav>
+
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu">
+
+          <i data-lucide="menu" class="w-6 h-6"></i>
+
+        </button>
+
+      </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu"
+      class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-3">
+
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="who-we-are.html" class="mobile-nav-link">Who We Are</a>
+      <a href="what-we-do.html" class="mobile-nav-link active">What We Do</a>
+      <a href="our-partners.html" class="mobile-nav-link">Our Partners</a>
+      <a href="contact-us.html" class="mobile-nav-link">Contact Us</a>
+
+      <a href="donate.html"
+        class="block text-center btn-primary w-full mt-4">
+        Donate Now
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <main class="flex-grow">
+
+    <!-- HERO SECTION -->
+    <section class="what-hero min-h-[430px] flex items-center text-white">
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-24">
+
+        <div class="max-w-3xl">
+
+          <span class="inline-flex items-center gap-2 bg-teal-500/20 border border-teal-300/30 text-teal-200 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+            <i data-lucide="heart-handshake" class="w-4 h-4"></i>
+            OUR INITIATIVES
+          </span>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+            What We Do
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-200 leading-relaxed max-w-2xl">
+            Discover our key initiatives designed to create lasting positive social impact.
+          </p>
+
+          <div class="flex flex-wrap gap-4 mt-8">
+
+            <a href="#initiatives"
+              class="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-600 text-white font-semibold px-7 py-3.5 rounded-full transition">
+              Explore Our Work
+              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+
+            <a href="contact-us.html"
+              class="inline-flex items-center gap-2 border border-white/60 hover:bg-white hover:text-slate-900 text-white font-semibold px-7 py-3.5 rounded-full transition">
+              Get Involved
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="py-16 sm:py-20 bg-white">
+
+      <div class="max-w-5xl mx-auto px-4 text-center">
+
+        <span class="section-label">OUR WORK IN ACTION</span>
+
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-4 mb-6">
+          Creating Opportunities. Building Better Communities.
+        </h2>
+
+        <p class="text-slate-600 text-lg leading-relaxed max-w-3xl mx-auto">
+          We believe meaningful change begins with action. Through our initiatives,
+          we aim to support communities, encourage learning, empower individuals,
+          and create opportunities for a better future.
+        </p>
+
+        <div class="w-20 h-1 bg-teal-500 rounded-full mx-auto mt-8"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- INITIATIVES -->
+    <section id="initiatives" class="py-10 bg-slate-50">
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-14">
+
+          <span class="section-label">WHAT WE FOCUS ON</span>
+
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-3 mb-4">
+            Our Key Initiatives
+          </h2>
+
+          <p class="text-slate-500 max-w-2xl mx-auto">
+            Explore the initiatives designed to bring positive and sustainable
+            change to individuals and communities.
+          </p>
+
+        </div>
+
+
+        <div class="grid sm:grid-cols-2 gap-8">
+
+
+          <!-- 1 DIGITAL EMPOWERMENT -->
+          <article class="initiative-card border border-slate-200">
+
+            <div class="initiative-image"
+              style="background-image:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85')">
+
+              <span class="initiative-number">01 / DIGITAL SKILLS</span>
+
+            </div>
+
+            <div class="p-7 sm:p-8">
+
+              <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-5">
+                <i data-lucide="monitor" class="w-6 h-6"></i>
+              </div>
+
+              <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                Digital Empowerment Camps
+              </h3>
+
+              <p class="text-slate-600 leading-relaxed">
+                We establish community digital labs and organize hands-on training
+                for youth and adults to develop essential computer skills,
+                web literacy, and career readiness.
+              </p>
+
+              <div class="mt-6 pt-5 border-t border-slate-100 flex items-center gap-2 text-teal-600 font-semibold text-sm">
+                <i data-lucide="laptop" class="w-4 h-4"></i>
+                Digital Learning & Career Readiness
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- 2 CLEAN WATER -->
+          <article class="initiative-card border border-slate-200">
+
+            <div class="initiative-image"
+              style="background-image:url('https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=1000&q=85')">
+
+              <span class="initiative-number">02 / CLEAN WATER</span>
+
+            </div>
+
+            <div class="p-7 sm:p-8">
+
+              <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5">
+                <i data-lucide="droplets" class="w-6 h-6"></i>
+              </div>
+
+              <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                Clean Water & Sanitation
+              </h3>
+
+              <p class="text-slate-600 leading-relaxed">
+                Partnering with engineers and local volunteers to build
+                sustainable rainwater harvesting systems and clean water
+                distribution stations in rural hubs.
+              </p>
+
+              <div class="mt-6 pt-5 border-t border-slate-100 flex items-center gap-2 text-blue-600 font-semibold text-sm">
+                <i data-lucide="waves" class="w-4 h-4"></i>
+                Sustainable Water Solutions
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- 3 MICRO ENTERPRISE -->
+          <article class="initiative-card border border-slate-200">
+
+            <div class="initiative-image"
+              style="background-image:url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85')">
+
+              <span class="initiative-number">03 / ENTREPRENEURSHIP</span>
+
+            </div>
+
+            <div class="p-7 sm:p-8">
+
+              <div class="w-12 h-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-5">
+                <i data-lucide="store" class="w-6 h-6"></i>
+              </div>
+
+              <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                Micro-Enterprise Support
+              </h3>
+
+              <p class="text-slate-600 leading-relaxed">
+                Providing micro-grants, business mentorship, and marketing
+                assistance to local entrepreneurs and women-led cooperatives.
+              </p>
+
+              <div class="mt-6 pt-5 border-t border-slate-100 flex items-center gap-2 text-orange-600 font-semibold text-sm">
+                <i data-lucide="trending-up" class="w-4 h-4"></i>
+                Business Growth & Empowerment
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- 4 YOUTH LEADERSHIP -->
+          <article class="initiative-card border border-slate-200">
+
+            <div class="initiative-image"
+              style="background-image:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=85')">
+
+              <span class="initiative-number">04 / YOUTH DEVELOPMENT</span>
+
+            </div>
+
+            <div class="p-7 sm:p-8">
+
+              <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-5">
+                <i data-lucide="users" class="w-6 h-6"></i>
+              </div>
+
+              <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                Youth Leadership Networks
+              </h3>
+
+              <p class="text-slate-600 leading-relaxed">
+                Mentoring young leaders to drive local activism, environmental
+                stewardship, and community problem-solving.
+              </p>
+
+              <div class="mt-6 pt-5 border-t border-slate-100 flex items-center gap-2 text-purple-600 font-semibold text-sm">
+                <i data-lucide="users-round" class="w-4 h-4"></i>
+                Leadership & Community Development
+              </div>
+
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- OUR APPROACH -->
+    <section class="py-20 bg-white">
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+          <div>
+
+            <span class="section-label">OUR APPROACH</span>
+
+            <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-4 mb-6">
+              Small Actions Can Create Lasting Change
+            </h2>
+
+            <p class="text-slate-600 leading-relaxed mb-8">
+              Positive social impact requires understanding, collaboration,
+              and consistent action. Our approach focuses on building
+              meaningful connections and exploring practical solutions.
+            </p>
+
+            <div class="space-y-6">
+
+              <div class="flex gap-4">
+                <div class="shrink-0 w-11 h-11 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center">
+                  <i data-lucide="ear" class="w-5 h-5"></i>
+                </div>
+
+                <div>
+                  <h3 class="font-bold text-slate-900 mb-1">Understand</h3>
+                  <p class="text-slate-500 text-sm leading-relaxed">
+                    Listen to communities and understand their needs.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="shrink-0 w-11 h-11 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center">
+                  <i data-lucide="handshake" class="w-5 h-5"></i>
+                </div>
+
+                <div>
+                  <h3 class="font-bold text-slate-900 mb-1">Collaborate</h3>
+                  <p class="text-slate-500 text-sm leading-relaxed">
+                    Bring people, partners, and resources together.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="shrink-0 w-11 h-11 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center">
+                  <i data-lucide="rocket" class="w-5 h-5"></i>
+                </div>
+
+                <div>
+                  <h3 class="font-bold text-slate-900 mb-1">Take Action</h3>
+                  <p class="text-slate-500 text-sm leading-relaxed">
+                    Turn ideas into meaningful community initiatives.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="shrink-0 w-11 h-11 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center">
+                  <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+                </div>
+
+                <div>
+                  <h3 class="font-bold text-slate-900 mb-1">Keep Improving</h3>
+                  <p class="text-slate-500 text-sm leading-relaxed">
+                    Learn from experiences and work towards better outcomes.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="relative">
+
+            <img
+              src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1100&q=85"
+              alt="People collaborating on a community initiative"
+              class="rounded-3xl shadow-xl w-full h-[480px] object-cover">
+
+            <div class="absolute -bottom-5 -left-3 sm:-left-6 bg-teal-600 text-white rounded-2xl p-6 shadow-xl max-w-xs">
+
+              <i data-lucide="heart-handshake" class="w-8 h-8 mb-3"></i>
+
+              <h3 class="text-xl font-bold">
+                Together We Make a Difference
+              </h3>
+
+              <p class="text-teal-50 text-sm mt-2">
+                Working towards stronger and more inclusive communities.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- GET INVOLVED -->
+    <section class="cta-section py-20 text-white">
+
+      <div class="max-w-4xl mx-auto px-4 text-center">
+
+        <span class="text-teal-300 font-bold tracking-widest text-sm uppercase">
+          BE PART OF THE CHANGE
+        </span>
+
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-5 mb-6">
+          Together, We Can Create a Better Tomorrow.
+        </h2>
+
+        <p class="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto mb-9">
+          Every contribution, partnership, and effort can help create
+          meaningful opportunities and positive social change.
+          Join us in making a difference.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+
+          <a href="donate.html"
+            class="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-600 px-8 py-4 rounded-full font-bold transition">
+            <i data-lucide="heart" class="w-5 h-5"></i>
+            Donate Now
+          </a>
+
+          <a href="our-partners.html"
+            class="inline-flex items-center gap-2 border border-white/50 hover:bg-white hover:text-slate-900 px-8 py-4 rounded-full font-bold transition">
+            <i data-lucide="handshake" class="w-5 h-5"></i>
+            Become a Partner
+          </a>
+
+          <a href="contact-us.html"
+            class="inline-flex items-center gap-2 border border-white/50 hover:bg-white hover:text-slate-900 px-8 py-4 rounded-full font-bold transition">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Contact Us
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+
+        <div class="text-center md:text-left">
+
+          <h3 class="text-white font-bold text-lg mb-2">
+            The Indian Foundation For Neurodiversity
+          </h3>
+
+          <p class="text-sm">
+            TIF4ND - Community Impact
+          </p>
+
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-5 text-sm">
+
+          <a href="index.html" class="hover:text-teal-400 transition">Home</a>
+          <a href="who-we-are.html" class="hover:text-teal-400 transition">Who We Are</a>
+          <a href="what-we-do.html" class="hover:text-teal-400 transition">What We Do</a>
+          <a href="our-partners.html" class="hover:text-teal-400 transition">Our Partners</a>
+          <a href="contact-us.html" class="hover:text-teal-400 transition">Contact Us</a>
+
+        </div>
+
+      </div>
+
+      <div class="border-t border-slate-800 mt-8 pt-6 text-center text-sm">
+        <p>&copy; 2026 TIF4ND Community Impact. All rights preserved.</p>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="js/script.js"></script>
+
+  <script>
+    // Mobile navigation
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', function () {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+
+      menuBtn.setAttribute('aria-expanded', String(!isHidden));
+
+      menuBtn.innerHTML = isHidden
+        ? '<i data-lucide="menu" class="w-6 h-6"></i>'
+        : '<i data-lucide="x" class="w-6 h-6"></i>';
+
+      lucide.createIcons();
+    });
+
+    // Close mobile menu after clicking a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.innerHTML =
+          '<i data-lucide="menu" class="w-6 h-6"></i>';
+        lucide.createIcons();
+      });
+    });
+
+    // Initialize icons
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>

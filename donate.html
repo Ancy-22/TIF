@@ -1,0 +1,868 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Donate - TIF4ND | Make a Difference</title>
+
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* GENERAL */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* HERO SECTION */
+    .donate-hero {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(3, 39, 42, 0.88) 0%,
+          rgba(3, 39, 42, 0.65) 48%,
+          rgba(3, 39, 42, 0.12) 100%
+        ),
+        url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=2000&q=85');
+
+      background-size: cover;
+      background-position: center 38%;
+      min-height: 470px;
+    }
+
+    /* DONATION CARD */
+    .donation-card {
+      box-shadow: 0 25px 70px rgba(15, 55, 60, 0.12);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    .donation-preset {
+      transition: all 0.25s ease;
+    }
+
+    .donation-preset:hover {
+      border-color: #0d9488;
+      transform: translateY(-3px);
+    }
+
+    .donation-preset.active {
+      background: #0f766e;
+      border-color: #0f766e;
+      color: white;
+      box-shadow: 0 8px 20px rgba(15, 118, 110, 0.2);
+    }
+
+    /* IMPACT CARDS */
+    .impact-card {
+      transition: all 0.3s ease;
+    }
+
+    .impact-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 18px 35px rgba(15, 23, 42, 0.09);
+    }
+
+    .impact-image {
+      transition: transform 0.6s ease;
+    }
+
+    .impact-card:hover .impact-image {
+      transform: scale(1.06);
+    }
+
+    /* CTA SECTION */
+    .donate-cta {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(3, 51, 54, 0.92),
+          rgba(3, 51, 54, 0.75)
+        ),
+        url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1800&q=85');
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* INPUTS */
+    .donation-input {
+      transition: all 0.2s ease;
+    }
+
+    .donation-input:focus {
+      border-color: #0d9488;
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.12);
+      outline: none;
+    }
+
+    @media (max-width: 640px) {
+      .donate-hero {
+        min-height: 390px;
+        background-position: 65% center;
+      }
+
+      .donate-hero h1 {
+        font-size: 2.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+  <!-- HEADER: EXISTING NAVIGATION PRESERVED -->
+  <div class="top-bar">
+  <div class="top-bar-content">
+    <a href="tel:+918122333014">📞 +91 81223 33014</a>
+    <a href="mailto:contact@tif4nd.org">✉️ contact@tif4nd.org</a>
+  </div>
+</div>
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-white font-bold text-xl shadow-md">
+            <img src="/image/school-logo-120x180.png">
+          </div>
+
+          <div class="flex flex-col">
+            <span class="text-xl font-bold tracking-tight text-teal-600">
+              The Indian Foundation For Neurodiversity
+            </span>
+            <span class="text-xs font-semibold text-slate-600 tracking-wider uppercase">
+              TIF4ND
+            </span>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="who-we-are.html" class="nav-link">Who We Are</a>
+          <a href="what-we-do.html" class="nav-link">What We Do</a>
+          <a href="our-partners.html" class="nav-link">Our Partners</a>
+          <a href="contact-us.html" class="nav-link">Contact Us</a>
+          <a href="donate.html" class="btn-primary">Donate Now</a>
+        </nav>
+
+        <button id="mobile-menu-btn"
+          class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <div id="mobile-menu"
+      class="hidden md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-3">
+
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="who-we-are.html" class="mobile-nav-link">Who We Are</a>
+      <a href="what-we-do.html" class="mobile-nav-link">What We Do</a>
+      <a href="our-partners.html" class="mobile-nav-link">Our Partners</a>
+      <a href="contact-us.html" class="mobile-nav-link">Contact Us</a>
+      <a href="donate.html" class="block text-center btn-primary w-full mt-4">
+        Donate Now
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- HERO SECTION -->
+  <section class="donate-hero flex items-center relative">
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full py-20">
+
+      <div class="max-w-2xl text-white">
+
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 border border-white/30 text-sm font-semibold mb-6 backdrop-blur">
+          <i data-lucide="heart" class="w-4 h-4 text-yellow-300"></i>
+          BE THE REASON SOMEONE SMILES
+        </span>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-5">
+          Make a <span class="text-teal-300">Difference.</span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-white/90 leading-relaxed max-w-xl mb-8">
+          Every contribution brings us one step closer to a more inclusive,
+          compassionate and empowered society.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4">
+
+          <a href="#donation"
+            class="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-500 text-white font-bold px-7 py-4 rounded-full transition shadow-lg">
+            Donate Today
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+
+          <span class="text-sm text-white/80">
+            Small acts. Big impact.
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- INTRODUCTION -->
+  <section class="py-16 bg-white">
+
+    <div class="max-w-4xl mx-auto px-6 text-center">
+
+      <span class="text-teal-700 font-bold text-sm uppercase tracking-widest">
+        Your kindness matters
+      </span>
+
+      <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-4 mb-5">
+        Together, We Can Create a Better Tomorrow
+      </h2>
+
+      <p class="text-slate-600 text-lg leading-relaxed">
+        At TIF4ND, we believe that every individual deserves opportunities,
+        dignity and support. Your generosity can help strengthen community
+        initiatives and create meaningful opportunities for people who need them.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- DONATION SECTION -->
+  <section id="donation" class="py-10 bg-gradient-to-b from-teal-50 to-slate-100">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid lg:grid-cols-5 gap-12 items-start">
+
+        <!-- LEFT CONTENT -->
+        <div class="lg:col-span-2 pt-4">
+
+          <span class="text-teal-700 font-bold uppercase tracking-widest text-sm">
+            Your contribution
+          </span>
+
+          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-4 mb-6">
+            Be a Part of Something Meaningful
+          </h2>
+
+          <p class="text-slate-600 leading-relaxed mb-8">
+            Your donation helps support initiatives that aim to improve
+            lives, strengthen communities and create opportunities.
+            Every contribution counts.
+          </p>
+
+          <div class="space-y-7">
+
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center shrink-0">
+                <i data-lucide="book-open" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-900">Quality Education</h3>
+                <p class="text-sm text-slate-500">Creating opportunities to learn and grow.</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-cyan-100 text-cyan-700 flex items-center justify-center shrink-0">
+                <i data-lucide="droplet" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-900">Clean Water & Sanitation</h3>
+                <p class="text-sm text-slate-500">Supporting healthier communities.</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
+                <i data-lucide="users" class="w-7 h-7"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-slate-900">Community Support</h3>
+                <p class="text-sm text-slate-500">Helping people access better opportunities.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mt-10 p-5 rounded-2xl bg-white border border-teal-100">
+            <div class="flex gap-3 items-start">
+              <i data-lucide="heart-handshake" class="w-7 h-7 text-teal-600 shrink-0"></i>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Your generosity can inspire change. Thank you for standing
+                with us and supporting a more inclusive future.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- RIGHT DONATION FORM -->
+        <div class="lg:col-span-3">
+
+          <div class="donation-card bg-white rounded-3xl p-6 md:p-10">
+
+            <div class="text-center mb-8">
+
+              <div class="w-16 h-16 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center mx-auto mb-5">
+                <i data-lucide="hand-heart" class="w-8 h-8"></i>
+              </div>
+
+              <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-3">
+                Support Our Initiatives
+              </h2>
+
+              <p class="text-slate-500">
+                Choose an amount that feels right for you.
+              </p>
+
+            </div>
+
+
+            <!-- PRESET AMOUNTS -->
+            <div class="grid grid-cols-3 gap-3 mb-7">
+
+              <button type="button"
+                class="donation-preset border-2 border-slate-200 rounded-xl p-4 font-bold text-slate-700"
+                data-amount="500">
+
+                <span class="block text-xl mb-1">₹500</span>
+                <span class="text-xs font-medium">Supporter</span>
+
+              </button>
+
+              <button type="button"
+                class="donation-preset active border-2 border-teal-700 rounded-xl p-4 font-bold"
+                data-amount="1000">
+
+                <span class="block text-xl mb-1">₹1,000</span>
+                <span class="text-xs font-medium">Contributor</span>
+
+              </button>
+
+              <button type="button"
+                class="donation-preset border-2 border-slate-200 rounded-xl p-4 font-bold text-slate-700"
+                data-amount="2500">
+
+                <span class="block text-xl mb-1">₹2,500</span>
+                <span class="text-xs font-medium">Champion</span>
+
+              </button>
+
+            </div>
+
+
+            <!-- FORM -->
+            <form id="donation-form" class="space-y-5">
+
+              <div>
+
+                <label for="custom-amount"
+                  class="block text-sm font-bold text-slate-700 mb-2">
+                  Custom Donation Amount (₹)
+                </label>
+
+                <div class="relative">
+                  <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 font-bold">
+                    ₹
+                  </span>
+
+                  <input
+                    type="number"
+                    id="custom-amount"
+                    name="amount"
+                    min="1"
+                    step="1"
+                    placeholder="Enter your amount"
+                    class="donation-input w-full pl-10 pr-4 py-4 rounded-xl border border-slate-300 bg-slate-50"
+                  >
+                </div>
+
+              </div>
+
+
+              <div>
+
+                <label for="donor-name"
+                  class="block text-sm font-bold text-slate-700 mb-2">
+                  Your Full Name
+                </label>
+
+                <input
+                  type="text"
+                  id="donor-name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                  placeholder="Enter your full name"
+                  class="donation-input w-full px-4 py-4 rounded-xl border border-slate-300 bg-slate-50"
+                >
+
+              </div>
+
+
+              <div>
+
+                <label for="donor-email"
+                  class="block text-sm font-bold text-slate-700 mb-2">
+                  Email Address
+                </label>
+
+                <input
+                  type="email"
+                  id="donor-email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  placeholder="yourname@example.com"
+                  class="donation-input w-full px-4 py-4 rounded-xl border border-slate-300 bg-slate-50"
+                >
+
+              </div>
+
+
+              <div>
+
+                <label for="donor-phone"
+                  class="block text-sm font-bold text-slate-700 mb-2">
+                  Phone Number <span class="text-slate-400 font-normal">(Optional)</span>
+                </label>
+
+                <input
+                  type="tel"
+                  id="donor-phone"
+                  name="phone"
+                  autocomplete="tel"
+                  placeholder="Enter your phone number"
+                  class="donation-input w-full px-4 py-4 rounded-xl border border-slate-300 bg-slate-50"
+                >
+
+              </div>
+
+
+              <div class="flex items-start gap-3">
+
+                <input
+                  type="checkbox"
+                  id="donor-consent"
+                  required
+                  class="mt-1 w-4 h-4 accent-teal-700"
+                >
+
+                <label for="donor-consent" class="text-sm text-slate-500 leading-relaxed">
+                  I confirm that the information provided above is accurate
+                  and agree to be contacted regarding my donation.
+                </label>
+
+              </div>
+
+
+              <button
+                type="submit"
+                class="w-full flex justify-center items-center gap-3 bg-teal-700 hover:bg-teal-800 text-white font-bold text-lg py-4 rounded-full transition shadow-lg shadow-teal-700/20">
+
+                <i data-lucide="heart" class="w-5 h-5"></i>
+                Proceed to Donate
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+
+              </button>
+
+              <p class="text-xs text-center text-slate-400 leading-relaxed">
+                Your donation will proceed only after an authorised
+                payment method is connected to this website.
+              </p>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- IMPACT SECTION -->
+  <section class="py-20 bg-white">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-2xl mx-auto mb-14">
+
+        <span class="text-teal-700 text-sm font-bold uppercase tracking-widest">
+          The power of giving
+        </span>
+
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-4 mb-5">
+          Your Support Can Make an Impact
+        </h2>
+
+        <p class="text-slate-500 leading-relaxed">
+          A little kindness can go a long way. Together, we can support
+          initiatives that make communities stronger.
+        </p>
+
+      </div>
+
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- CARD 1 -->
+        <div class="impact-card bg-white rounded-2xl overflow-hidden border border-slate-200">
+
+          <div class="h-56 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=85"
+              alt="Children learning in a classroom"
+              class="impact-image w-full h-full object-cover"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="p-7">
+
+            <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center mb-5">
+              <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Empower Through Education
+            </h3>
+
+            <p class="text-slate-500 leading-relaxed text-sm">
+              Help create learning opportunities and support educational
+              initiatives that encourage individuals to reach their potential.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- CARD 2 -->
+        <div class="impact-card bg-white rounded-2xl overflow-hidden border border-slate-200">
+
+          <div class="h-56 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1538300342682-cf57afb97285?auto=format&fit=crop&w=900&q=85"
+              alt="Clean water flowing from a tap"
+              class="impact-image w-full h-full object-cover"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="p-7">
+
+            <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center mb-5">
+              <i data-lucide="droplets" class="w-6 h-6"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Support Healthier Communities
+            </h3>
+
+            <p class="text-slate-500 leading-relaxed text-sm">
+              Contribute towards community initiatives that promote
+              access to essential resources and healthier living.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+        <div class="impact-card bg-white rounded-2xl overflow-hidden border border-slate-200">
+
+          <div class="h-56 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=900&q=85"
+              alt="Volunteers supporting their community"
+              class="impact-image w-full h-full object-cover"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="p-7">
+
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mb-5">
+              <i data-lucide="handshake" class="w-6 h-6"></i>
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Strengthen Communities
+            </h3>
+
+            <p class="text-slate-500 leading-relaxed text-sm">
+              Support initiatives that encourage participation,
+              inclusion and meaningful community connections.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHY DONATE SECTION -->
+  <section class="py-10 bg-slate-50">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+
+        <div>
+
+          <span class="text-teal-700 font-bold uppercase tracking-widest text-sm">
+            Every contribution counts
+          </span>
+
+          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-4 mb-6">
+            Giving Is More Than a Donation.
+          </h2>
+
+          <p class="text-slate-600 leading-relaxed mb-6">
+            It is a way of showing compassion, building connections and
+            creating possibilities for a better future.
+          </p>
+
+          <ul class="space-y-4">
+
+            <li class="flex gap-3 items-center">
+              <i data-lucide="check-circle" class="w-5 h-5 text-teal-600"></i>
+              <span class="text-slate-700">Support meaningful community initiatives.</span>
+            </li>
+
+            <li class="flex gap-3 items-center">
+              <i data-lucide="check-circle" class="w-5 h-5 text-teal-600"></i>
+              <span class="text-slate-700">Encourage inclusion and equal opportunities.</span>
+            </li>
+
+            <li class="flex gap-3 items-center">
+              <i data-lucide="check-circle" class="w-5 h-5 text-teal-600"></i>
+              <span class="text-slate-700">Be part of positive and lasting change.</span>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="rounded-3xl overflow-hidden shadow-xl h-80 md:h-96">
+
+          <img
+            src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1200&q=85"
+            alt="People coming together to support a cause"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          >
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CALL TO ACTION -->
+  <section class="donate-cta py-20 text-center text-white">
+
+    <div class="max-w-3xl mx-auto px-6">
+
+      <div class="w-16 h-16 rounded-full bg-white/15 border border-white/30 flex items-center justify-center mx-auto mb-6">
+        <i data-lucide="heart-handshake" class="w-8 h-8 text-teal-200"></i>
+      </div>
+
+      <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
+        Together, We Can Build a Brighter Future.
+      </h2>
+
+      <p class="text-white/80 text-lg leading-relaxed mb-9">
+        Your kindness can inspire hope, create opportunities and bring
+        communities closer together.
+      </p>
+
+      <a href="#donation"
+        class="inline-flex items-center gap-3 bg-white text-teal-800 font-bold px-8 py-4 rounded-full hover:bg-teal-50 transition shadow-lg">
+
+        Make a Donation
+        <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="flex flex-col md:flex-row justify-between items-center gap-5">
+
+        <div class="text-center md:text-left">
+
+          <h3 class="text-white font-bold text-lg mb-1">
+            TIF4ND
+          </h3>
+
+          <p class="text-sm">
+            The Indian Foundation For Neurodiversity
+          </p>
+
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-5 text-sm">
+
+          <a href="index.html" class="hover:text-white transition">Home</a>
+          <a href="who-we-are.html" class="hover:text-white transition">Who We Are</a>
+          <a href="what-we-do.html" class="hover:text-white transition">What We Do</a>
+          <a href="contact-us.html" class="hover:text-white transition">Contact Us</a>
+
+        </div>
+
+      </div>
+
+      <div class="border-t border-slate-700 mt-8 pt-6 text-center text-sm">
+
+        <p>
+          &copy; 2026 TIF4ND Community Impact. All rights preserved.
+        </p>
+
+        <p class="mt-2 text-teal-400">
+          Let's create a more inclusive world together. 💛
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="js/script.js"></script>
+
+  <script>
+
+    // LUCIDE ICONS
+    lucide.createIcons();
+
+
+    // DONATION AMOUNT SELECTION
+    const presetButtons = document.querySelectorAll('.donation-preset');
+    const amountInput = document.getElementById('custom-amount');
+
+    presetButtons.forEach(button => {
+
+      button.addEventListener('click', () => {
+
+        presetButtons.forEach(btn => {
+          btn.classList.remove('active');
+        });
+
+        button.classList.add('active');
+
+        amountInput.value = button.dataset.amount;
+
+      });
+
+    });
+
+
+    // CUSTOM AMOUNT
+    amountInput.addEventListener('input', () => {
+
+      presetButtons.forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+    });
+
+
+    // DONATION FORM
+    const donationForm = document.getElementById('donation-form');
+
+    donationForm.addEventListener('submit', function(event) {
+
+      event.preventDefault();
+
+      const amount = Number(amountInput.value);
+      const name = document.getElementById('donor-name').value.trim();
+      const email = document.getElementById('donor-email').value.trim();
+
+      if (!Number.isFinite(amount) || amount < 1) {
+        alert('Please select or enter a valid donation amount.');
+        amountInput.focus();
+        return;
+      }
+
+      if (!name || !email) {
+        alert('Please enter your name and email address.');
+        return;
+      }
+
+      alert(
+        'Thank you, ' + name + '!\n\n' +
+        'Your selected donation amount is ₹' +
+        amount.toLocaleString('en-IN') +
+        '.\n\n' +
+        'The payment gateway is not connected yet. Please contact TIF4ND to complete your donation.'
+      );
+
+    });
+
+
+    // MOBILE MENU
+    // Use this only if js/script.js does not already handle the menu.
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+
+      mobileMenuBtn.addEventListener('click', () => {
+
+        mobileMenu.classList.toggle('hidden');
+
+        const isOpen = !mobileMenu.classList.contains('hidden');
+
+        mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+
+      });
+
+    }
+
+  </script>
+
+</body>
+</html>
